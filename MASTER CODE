@@ -20,7 +20,7 @@ def finddemons:
         print(line) 
     # 
     for line in text1: 
-         poslist= [w for w in text1 if w in demon and poswords in line]
-         neglist= [w for w in text1 if w in demon and negwords in line]
+         poslist= [w for w in text1 if demon in line and poswords in line]
+         neglist= [w for w in text1 if demon in line and negwords in line]
 #sort lines by positive and negative words 
 
