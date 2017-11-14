@@ -1,23 +1,23 @@
-import nltk 
++import nltk 
 nltk.download("opinion_lexicon") 
 from nltk.corpus import opinion_lexicon 
 poswords= set(opinion_lexicon.words("positive-words.txt")) 
 negwords= set(opinion_lexicon.words("negative-words.txt")) 
 #open files 
-text1 = open(" 
-text2 = open(" 
+text1 = ("paulryan.txt")
+text2 = ("pence.txt") 
 #We could also use a regular expression to catch all "These" and "Those" along with "these" and "those"
 def finddemons:  
     for x in text1():
-        percpos = len([w for w in text1 if w in poswords ]) / len(address_words)
-        percneg = len([w for w in text1 if w in negwords ]) / len(address_words)
-        print(address, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+    percpos = len([w for w in text1 if w in poswords ]) / len(address_words)
+    percneg = len([w for w in text1 if w in negwords ]) / len(address_words)
+    print(address, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
 def finddemons2:  
-    for x in text1():
-        percpos = len([w for w in text2 if w in poswords ]) / len(address_words)
-        percneg = len([w for w in text2 if w in negwords ]) / len(address_words)
-        print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+    for x in text2():
+    percpos = len([w for w in text2 if w in poswords ]) / len(address_words)
+    percneg = len([w for w in text2 if w in negwords ]) / len(address_words)
+    print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
 
 
@@ -31,10 +31,17 @@ def finddemons2:
 
 
 
+from nltk.corpus import opinion_lexicon
 
+opinion_lexicon.fileids()
 
+opinion_lexicon.words("negative-words.txt")
+opinion_lexicon.words("positive-words.txt")
+
+poswords = set(opinion_lexicon.words("positive-words.txt"))
+negwords = set(opinion_lexicon.words("negative-words.txt"))
 for address in inaugural.fileids():
     address_words = inaugural.words(address)
-    percpos = len([w for w in address_words if w in poswords ]) / len(address_words)
-    percneg = len([w for w in address_words if w in negwords ]) / len(address_words)
+    percpos = len([w for w in address_words if w in poswords ]) /len(address_words)
+    percneg = len([w for w in address_words if w in negwords ]) /len(address_words)
     print(address, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
