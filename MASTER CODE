@@ -25,3 +25,13 @@ def finddemons:
          neglist= [w for w in text1 if demon in line and negwords in line]
 #sort lines by positive and negative words 
 
+
+
+
+
+
+for address in inaugural.fileids():
+    address_words = inaugural.words(address)
+    percpos = len([w for w in address_words if w in poswords ]) / len(address_words)
+    percneg = len([w for w in address_words if w in negwords ]) / len(address_words)
+    print(address, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
