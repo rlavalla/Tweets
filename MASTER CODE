@@ -1,2 +1,24 @@
-
-
+import nltk
+nltk.download("opinion_lexicon")
+from nltk.corpus import opinion_lexicon
+poswords= set(opinion_lexicon.words("positive-words.txt"))
+negwords= set(opinion_lexicon.words("negative-words.txt"))
+#open files
+text1 = open("
+text2 = open("
+alldemons= []
+def finddemons:
+    demon = "###"
+    #if we already have demonstratives picked out, this is probably unneccessary
+    for line in text1:
+        if demon in line:
+            alldemons += i
+    for line in text2:
+        if demon in line:
+            alldemons += i
+    if line in alldemons:
+        print(line)
+    #
+    if demon in text1:
+        
+#sort lines by positive and negative words
