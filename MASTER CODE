@@ -9,16 +9,17 @@ text2 = ("pence.txt")
 #We could also use a regular expression to catch all "These" and "Those" along with "these" and "those"
 def finddemons():  
     for x in text1():
-    percpos = len([w for w in text1 if w in poswords ]) / len(address_words)
-    percneg = len([w for w in text1 if w in negwords ]) / len(address_words)
-    print(address, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+        percpos = len([w for w in text1 if w in poswords ]) / len(address_words)
+        percneg = len([w for w in text1 if w in negwords ]) / len(address_words)
+        print(address, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
 def finddemons2():  
     for x in text2():
-    percpos = len([w for w in text2 if w in poswords ]) / len(address_words)
-    percneg = len([w for w in text2 if w in negwords ]) / len(address_words)
-    print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
-
+        percpos = len([w for w in text2 if w in poswords ]) / len(address_words)
+        percneg = len([w for w in text2 if w in negwords ]) / len(address_words)
+        print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+finddemons()
+finddemons2()
 
 
 
