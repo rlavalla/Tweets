@@ -6,6 +6,7 @@ negwords= set(opinion_lexicon.words("negative-words.txt"))
 #open files 
 text1 = open(" 
 text2 = open(" 
+#We could also use a regular expression to catch all "These" and "Those" along with "these" and "those"
 alldemons= [] 
 def finddemons: 
     demon = "###" 
