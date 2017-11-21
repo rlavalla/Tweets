@@ -7,7 +7,7 @@ from nltk.corpus import opinion_lexicon
 poswords= set(opinion_lexicon.words("positive-words.txt")) 
 negwords= set(opinion_lexicon.words("negative-words.txt")) 
 #open files 
-text1 = open("/Users/kna0078/paulryan.txt")
+text1 = open("/Users/kna0078/paulryan.txt", encoding="###")
 text2 = open("/Users/kna0078/pence.txt")
 text1r= text1.readlines()
 text2r= text2.readlines()
