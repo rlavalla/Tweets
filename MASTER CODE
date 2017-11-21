@@ -12,7 +12,7 @@ text2 = open("/Users/kna0078/pence.txt")
 text1r= text1.readlines()
 text2r= text2.readlines()
 print(text1)
-#We could also use a regular expression to catch all "These" and "Those" along with "these" and "those"
+
 def finddemons():
     for x in text1r():
         y = text1r.words(x)
