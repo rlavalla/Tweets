@@ -1,22 +1,28 @@
-+import nltk 
-nltk.download("opinion_lexicon") 
+#FinalProject CompLing
+#call by
+#python    Documents/tweets.py 
+# when saved to Documents
+import nltk  
 from nltk.corpus import opinion_lexicon 
 poswords= set(opinion_lexicon.words("positive-words.txt")) 
 negwords= set(opinion_lexicon.words("negative-words.txt")) 
 #open files 
-text1 = ("paulryan.txt")
-text2 = ("pence.txt") 
+text1 = open("/Users/kna0078/paulryan.txt")
+text2 = open("/Users/kna0078/pence.txt")
+text1r= text1.readlines()
+text2r= text2.readlines()
+print(text1)
 #We could also use a regular expression to catch all "These" and "Those" along with "these" and "those"
-def finddemons():  
-    for x in text1():
-        y = text1.words(x)
+def finddemons():
+    for x in text1r():
+        y = text1r.words(x)
         percpos = len([w for w in text1 if w in poswords ]) / len(y)
         percneg = len([w for w in text1 if w in negwords ]) / len(y)
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
 def finddemons2():  
-    for x in text2():
-        y = text2.words(x)
+    for x in text2r():
+        y = text2r.words(x)
         percpos = len([w for w in text2 if w in poswords ]) / len(y)
         percneg = len([w for w in text2 if w in negwords ]) / len(y)
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
