@@ -3,7 +3,8 @@
 #python    Documents/tweets.py 
 # when saved to Documents
 import nltk  
-from nltk.corpus import opinion_lexicon 
+from nltk.corpus import opinion_lexicon
+opinion_lexicon.fileids()
 poswords= set(opinion_lexicon.words("positive-words.txt")) 
 negwords= set(opinion_lexicon.words("negative-words.txt")) 
 #open files 
