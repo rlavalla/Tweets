@@ -1,3 +1,4 @@
+
 #FinalProject CompLing
 #call by
 #python    Documents/tweets.py 
@@ -12,13 +13,16 @@ text1 = open("/Users/kna0078/paulryan.txt", encoding="###")
 text2 = open("/Users/kna0078/pence.txt")
 text1r= text1.readlines()
 text2r= text2.readlines()
+lowertext1=[w for w in text1r if w.lower]
+lowertext2=[w for w in text2r if w.lower]
+
 print(text1)
 
 def finddemons():
     for x in text1r():
         y = text1r.words(x)
-        percpos = len([w for w in text1 if w in poswords ]) / len(y)
-        percneg = len([w for w in text1 if w in negwords ]) / len(y)
+        percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)
+        percneg = len([w for w in lowertext2 if w in negwords ]) / len(y)
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
 def finddemons2():  
