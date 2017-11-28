@@ -19,17 +19,17 @@ lowertext2=[w for w in text2r if w.lower]
 print(text1)
 
 def finddemons():
-    for x in text1r():
-        y = text1r.words(x)
+    for x in lowertext1():
+        y = lowertext1.words(x)
         percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)
-        percneg = len([w for w in lowertext2 if w in negwords ]) / len(y)
+        percneg = len([w for w in lowertext1 if w in negwords ]) / len(y)
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
 def finddemons2():  
-    for x in text2r():
-        y = text2r.words(x)
-        percpos = len([w for w in text2 if w in poswords ]) / len(y)
-        percneg = len([w for w in text2 if w in negwords ]) / len(y)
+    for x in lowertext2():
+        y = lowertext2.words(x)
+        percpos = len([w for w in lowertext2 if w in poswords ]) / len(y)
+        percneg = len([w for w in lowertext2 if w in negwords ]) / len(y)
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
 finddemons()
