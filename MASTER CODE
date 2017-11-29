@@ -11,9 +11,9 @@ negwords = set(opinion_lexicon.words("negative-words.txt"))
 #open files 
 text1 = open("/Users/kna0078/paulryan.txt", encoding="###") ### on mac just "paulryan.txt"
 text2 = open("/Users/kna0078/pence.txt") ##### "pence.txt"
-text1r = text1.readlines() #.readlines() creates a list, needs to change!
+text1r = text1.readlines()
 text2r = text2.readlines()
-lowertext1 = text1r.lower() #list does not take .lower()
+lowertext1 = text1r.lower()
 strlt1 = str(lowertext1)
 #I think these need to be inside the finddemons function. I think the function isnt callable BECAUSE of this list.
 lowertext2 = [w for w in text2r if w.lower]
@@ -50,11 +50,11 @@ opinion_lexicon.words("positive-words.txt")
 
 poswords = set(opinion_lexicon.words("positive-words.txt"))
 negwords = set(opinion_lexicon.words("negative-words.txt"))
-for address in inaugural.fileids():
-    address_words = inaugural.words(address)
-    percpos = len([w for w in address_words if w in poswords ]) /len(address_words)
-    percneg = len([w for w in address_words if w in negwords ]) /len(address_words)
-    print(address, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+for x in inaugural.fileids():
+    y = inaugural.words(x)
+    percpos = len([w for w in y if w in poswords ]) /len(y)
+    percneg = len([w for w in y if w in negwords ]) /len(y)
+    print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
 
 
@@ -62,20 +62,10 @@ for address in inaugural.fileids():
 
 
 
-
-
-
-
-
+#########test for '\n' file
 text1 = open("/Users/kna0078/paulryan.txt", encoding="###") ### on mac just "paulryan.txt"
-lowertext1 = text1.lower()
-strlt1 = str(lowertext1)
-
-print(text1)
-
-def finddemons():
-    for x in lowertext1():
-        y = lowertext1.words()
-        percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
-        percneg = len([w for w in lowertext1 if w in negwords ]) / len(y)
-        print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+for x in text1():
+    y = text1.words(x)
+    percpos = len([w for w in text1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
+    percneg = len([w for w in text1 if w in negwords ]) / len(y)
+    print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
