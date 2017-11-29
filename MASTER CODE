@@ -20,10 +20,10 @@ lowertext2=[w for w in text2r if w.lower]
 print(text1)
 
 def finddemons():
-    lowertext1=([w for w in text1r if w.lower]) . #####Put that list here
+    lowertext1=([w for w in text1r if w.lower])  #####Put that list here
     for x in lowertext1():
         y = lowertext1.words(x)
-        percpos = len([w for w in lowertext1 if w in poswords ]) / len(y) .  ##if w in poswords and is lower?
+        percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
         percneg = len([w for w in lowertext1 if w in negwords ]) / len(y)
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
