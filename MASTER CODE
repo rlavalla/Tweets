@@ -13,16 +13,16 @@ text1 = open("/Users/kna0078/paulryan.txt", encoding="###") ### on mac just "pau
 text2 = open("/Users/kna0078/pence.txt") ##### "pence.txt"
 text1r = text1.readlines()
 text2r = text2.readlines()
-lowertext1 = [w for w in text1r if w.lower]
+lowertext1 = text1r.lower()
+strlt1 = str(lowertext1)
 #I think these need to be inside the finddemons function. I think the function isnt callable BECAUSE of this list.
 lowertext2 = [w for w in text2r if w.lower]
 
 print(text1)
 
 def finddemons():
-    lowertext1 = (str[w for w in text1r if w.lower])  #####Put that list here
     for x in lowertext1():
-        y = lowertext1.words(x)
+        y = lowertext1.words()
         percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
         percneg = len([w for w in lowertext1 if w in negwords ]) / len(y)
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
@@ -55,3 +55,27 @@ for address in inaugural.fileids():
     percpos = len([w for w in address_words if w in poswords ]) /len(address_words)
     percneg = len([w for w in address_words if w in negwords ]) /len(address_words)
     print(address, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+
+
+
+
+
+
+
+
+
+
+
+
+text1 = open("/Users/kna0078/paulryan.txt", encoding="###") ### on mac just "paulryan.txt"
+lowertext1 = text1.lower()
+strlt1 = str(lowertext1)
+
+print(text1)
+
+def finddemons():
+    for x in lowertext1():
+        y = lowertext1.words()
+        percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
+        percneg = len([w for w in lowertext1 if w in negwords ]) / len(y)
+        print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
