@@ -64,8 +64,9 @@ for x in inaugural.fileids():
 
 #########test for '\n' file
 text1 = open("/Users/kna0078/paulryan.txt", encoding="###") ### on mac just "paulryan.txt"
-for x in text1():
-    y = text1.words(x)
-    percpos = len([w for w in text1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
-    percneg = len([w for w in text1 if w in negwords ]) / len(y)
+text1r = text1.read()
+for x in text1r():
+    y = text1r.words(x)
+    percpos = len([w for w in text1r if w in poswords ]) / len(y)  ##if w in poswords and is lower?
+    percneg = len([w for w in text1r if w in negwords ]) / len(y)
     print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
