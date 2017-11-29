@@ -6,21 +6,21 @@
 import nltk  
 from nltk.corpus import opinion_lexicon
 opinion_lexicon.fileids()
-poswords= set(opinion_lexicon.words("positive-words.txt")) 
-negwords= set(opinion_lexicon.words("negative-words.txt")) 
+poswords = set(opinion_lexicon.words("positive-words.txt")) 
+negwords = set(opinion_lexicon.words("negative-words.txt")) 
 #open files 
-text1 = open("/Users/kna0078/paulryan.txt", encoding="###")
-text2 = open("/Users/kna0078/pence.txt")
-text1r= text1.readlines()
-text2r= text2.readlines()
-lowertext1=[w for w in text1r if w.lower]
+text1 = open("/Users/kna0078/paulryan.txt", encoding="###") ### on mac just "paulryan.txt"
+text2 = open("/Users/kna0078/pence.txt") ##### "pence.txt"
+text1r = text1.readlines()
+text2r = text2.readlines()
+lowertext1 = [w for w in text1r if w.lower]
 #I think these need to be inside the finddemons function. I think the function isnt callable BECAUSE of this list.
-lowertext2=[w for w in text2r if w.lower]
+lowertext2 = [w for w in text2r if w.lower]
 
 print(text1)
 
 def finddemons():
-    lowertext1=([w for w in text1r if w.lower])  #####Put that list here
+    lowertext1 = ([w for w in text1r if w.lower])  #####Put that list here
     for x in lowertext1():
         y = lowertext1.words(x)
         percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
