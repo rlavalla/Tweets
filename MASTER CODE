@@ -13,7 +13,8 @@ text1 = open("paulryan.txt", "r") ### on mac just "paulryan.txt"
 text2 = open("pence.txt", "r") ##### "pence.txt"
 text1r = text1.readlines()
 text2r = text2.readlines()
-lowertext1 = text1r.lower()
+lowertext1 = [w for w in text1r if w.lower]
+text1r.lower()
 lowertext2 = [w for w in text2r if w.lower]
 
 print(text1)
