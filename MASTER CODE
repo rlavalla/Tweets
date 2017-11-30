@@ -4,24 +4,27 @@
 #python    Documents/tweets.py 
 # when saved to Documents
 import nltk  
+#nltk.word_tokenize()
 from nltk.corpus import opinion_lexicon
 opinion_lexicon.fileids()
 poswords = set(opinion_lexicon.words("positive-words.txt")) 
 negwords = set(opinion_lexicon.words("negative-words.txt")) 
 #open files 
-text1 = open("paulryan.txt", "r") ### on mac just "paulryan.txt"
-text2 = open("pence.txt", "r") ##### "pence.txt"
-text1r = text1.readlines()
-text2r = text2.readlines()
+text1 = open("paulryan.txt", "r", encoding = "utf-8") ### on mac just "paulryan.txt"
+text2 = open("pence.txt", "r", encoding = "utf-8") ##### "pence.txt"
+text1r = text1.readl()
+text2r = text2.read()
 lowertext1 = [w for w in text1r if w.lower]
+textoftext1= nltk.Text(lowertext1)
 text1r.lower()
 lowertext2 = [w for w in text2r if w.lower]
+textoftext2=
 
 print(text1)
 
 def finddemons():
-    for x in lowertext1():
-        y = lowertext1.words()
+    for x in lowertext1:
+        y = lowertext1.words() .  #works on text type object (.words) OR tokenize each line in text
         percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
         percneg = len([w for w in lowertext1 if w in negwords ]) / len(y)
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
@@ -88,3 +91,7 @@ for x in text1r:
     percneg = len([w for w in text1r if w in negwords ]) / len(y)
     print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
+f=open("my-file.txt", "rU")
+raw = f.read()
+token= nltk.word_tokenize(raw)
+text= nltk.Text(tokens)
