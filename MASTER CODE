@@ -9,13 +9,11 @@ opinion_lexicon.fileids()
 poswords = set(opinion_lexicon.words("positive-words.txt")) 
 negwords = set(opinion_lexicon.words("negative-words.txt")) 
 #open files 
-text1 = open("/Users/kna0078/paulryan.txt", encoding="###", "r") ### on mac just "paulryan.txt"
-text2 = open("/Users/kna0078/pence.txt", "r") ##### "pence.txt"
+text1 = open("paulryan.txt", "r") ### on mac just "paulryan.txt"
+text2 = open("pence.txt", "r") ##### "pence.txt"
 text1r = text1.readlines()
 text2r = text2.readlines()
 lowertext1 = text1r.lower()
-strlt1 = str(lowertext1)
-#I think these need to be inside the finddemons function. I think the function isnt callable BECAUSE of this list.
 lowertext2 = [w for w in text2r if w.lower]
 
 print(text1)
