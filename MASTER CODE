@@ -4,14 +4,45 @@
 #python    Documents/tweets.py 
 # when saved to Documents
 import nltk  
-#nltk.word_tokenize()
 from nltk.corpus import opinion_lexicon
+########from nltk.tokenize import word_tokenize
+########from nltk.tokenize.simple import (SpaceTokenizer, TabTokenizer, LineTokenizer, line_tokenize)
+########nltk.word_tokenize()
+
+
 opinion_lexicon.fileids()
 poswords = set(opinion_lexicon.words("positive-words.txt")) 
 negwords = set(opinion_lexicon.words("negative-words.txt")) 
-#open files 
+
+
+f=open("paulryan.txt", "rU")
+raw = f.read()
+token= nltk.line_tokenize(raw) ####CHANGED WORD TO LINE
+text= nltk.Text(token)
+####ok that totally works but it gives back this...so they're not by line, and they're not all lowercase.
+>>> print(text)
+<Text: 1 . Mar 6 , 2017 07:22:02 PM...>
+>>> text[:50]
+['1', '.', 'Mar', '6', ',', '2017', '07:22:02', 'PM', 'Republicans', 'made', 'a', 
+'promise', 'to', 'the', 'American', 'people—today', ',', 'we', "'re", 'turning', 
+'those', 'words', 'into', 'action', '.', 'https', ':', '//t.co/NyLgt9hhtB', '#', 
+'RepealAndReplace', '[', 'Twitter', 'Web', 'Client', ']', "link'\\n'", '2', '.', 
+'Nov', '13', ',', '2016', '08:53:38', 'AM', 'Think', 'about', 'those', 'regulations', 
+'from', 'the']...
+
+
+https://docs.python.org/3/library/tokenize.html
+^^^^^^^^That has some awesome info about the tokenizing by line with this kind of file.
+
+http://www.nltk.org/api/nltk.tokenize.html
+^^^^^^^^^Good info on tweet tokenizing
+
+
+
 text1 = open("paulryan.txt", "r", encoding = "utf-8") ### on mac just "paulryan.txt"
 text2 = open("pence.txt", "r", encoding = "utf-8") ##### "pence.txt"
+
+###IDK if we need these ones, it's already reading it with the "rU", and we need a different way to do lowercase.
 text1r = text1.readl()
 text2r = text2.read()
 lowertext1 = [w for w in text1r if w.lower]
@@ -30,7 +61,7 @@ def finddemons():
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
 
 def finddemons2():  
-    for x in lowertext2():
+    for x in lowertext2:
         y = lowertext2.words(x)
         percpos = len([w for w in lowertext2 if w in poswords ]) / len(y)
         percneg = len([w for w in lowertext2 if w in negwords ]) / len(y)
@@ -84,14 +115,24 @@ for x in text1:
     
     
     
-text1r = text1.read()
-for x in text1r:
-    y = text1r.words(x)
-    percpos = len([w for w in text1r if w in poswords ]) / len(y)  
-    percneg = len([w for w in text1r if w in negwords ]) / len(y)
+
+for x in text:
+    y = text(x)
+    percpos = len([w for w in text if w in poswords ]) / len(y)  
+    percneg = len([w for w in text if w in negwords ]) / len(y)
     print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+    
+    
+for x in lowertext1:
+    y = lowertext1.words() .  #works on text type object (.words) OR tokenize each line in text
+    percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
+    percneg = len([w for w in lowertext1 if w in negwords ]) / len(y)
+    print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+    
+    
+    
 
 f=open("my-file.txt", "rU")
 raw = f.read()
 token= nltk.word_tokenize(raw)
-text= nltk.Text(tokens)
+text= nltk.Text(token)
