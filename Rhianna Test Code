@@ -25,6 +25,7 @@ def finddemons():
     for x in token:
         y = token.words() .  #works on text type object (.words) OR tokenize each line in text
         percpos = len([w for w in token if w in poswords ]) / len(y)  ##if w in poswords and is lower?
+        #percpos = len([w for w in token if w in poswords]) / len(raw)
         percneg = len([w for w in token if w in negwords ]) / len(y)
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
         
