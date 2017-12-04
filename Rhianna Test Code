@@ -4,7 +4,6 @@ FinalProject CompLing
 # when saved to Documents
 import nltk  
 from nltk.corpus import opinion_lexicon
-from nltk.tokenize.simple import (LineTokenizer, line_tokenize)
 
 poswords = set(opinion_lexicon.words("positive-words.txt")) 
 negwords = set(opinion_lexicon.words("negative-words.txt")) 
@@ -16,17 +15,17 @@ token= nltk.word_tokenize(raw)
 
 f2 = open("pence.txt", "rU")
 raw2 = f2.read()
-token2 = nltk.line_tokenize(raw2)
+token2 = nltk.word_tokenize(raw2)
 
+#FIGURE OUT .LOWER
 
 print(token)
 
 def finddemons():
     for x in token:
-        y = token.words() .  #works on text type object (.words) OR tokenize each line in text
-        percpos = len([w for w in token if w in poswords ]) / len(y)  ##if w in poswords and is lower?
-        #percpos = len([w for w in token if w in poswords]) / len(raw)
-        percneg = len([w for w in token if w in negwords ]) / len(y)
+        y = len(token)
+        percpos = len([w for w in token if w in poswords ]) / y  ##if w in poswords and is lower?
+        percneg = len([w for w in token if w in negwords ]) / y
         print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
         
 finddemons()
@@ -55,4 +54,22 @@ https://docs.python.org/3/library/tokenize.html
 
 http://www.nltk.org/api/nltk.tokenize.html
 ^^^^^^^^^Good info on tweet tokenizing
+
+
+
+#####THAT WORKSSSSSSS
+>>> import nltk
+>>> from nltk.corpus import opinion_lexicon
+>>> poswords = set(opinion_lexicon.words("positive-words.txt")) 
+>>> negwords = set(opinion_lexicon.words("negative-words.txt")) 
+>>> f=open("paulryan.txt", "rU")
+>>> raw = f.read()
+>>> token= nltk.word_tokenize(raw)
+>>> def finddemons():
+...     for x in token:
+...             percpos = len([w for w in token if w in poswords ]) / len(raw)
+...             percneg = len([w for w in token if w in negwords ]) / len(raw)
+...             print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+... 
+>>> finddemons()
 
