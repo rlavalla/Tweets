@@ -12,7 +12,7 @@ negwords = set(opinion_lexicon.words("negative-words.txt"))
 
 f=open("paulryan.txt", "rU")
 raw = f.read()
-token= nltk.line_tokenize(raw) ####CHANGED WORD TO LINE
+token= nltk.word_tokenize(raw)
 
 f2 = open("pence.txt", "rU")
 raw2 = f2.read()
