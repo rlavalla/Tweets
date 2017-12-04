@@ -17,7 +17,9 @@ negwords = set(opinion_lexicon.words("negative-words.txt"))
 
 f=open("paulryan.txt", "rU")
 raw = f.read()
-token= nltk.line_tokenize(raw) ####CHANGED WORD TO LINE
+len(raw) #length of characters (total)
+token= nltk.word_tokenize(raw)
+len(token) #length of everything, including puct.
 text= nltk.Text(token)
 ####ok that totally works but it gives back this...so they're not by line, and they're not all lowercase.
 >>> print(text)
