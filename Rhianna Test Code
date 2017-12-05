@@ -21,6 +21,27 @@ token2 = nltk.word_tokenize(raw2)
 
 print(token)
 
+
+
+
+
+
+#TRIED IN CLASS::::
+>>> def finddemons():
+...     emptylist = []
+...     for red in raw:
+...             if red.endswith("\n"):
+...                     emptylist.append(red)
+...             else:
+...                     pass
+...     return emptylist
+... 
+>>> finddemons()
+
+
+
+
+
 def finddemons():
     for x in token:
         y = len(token)
