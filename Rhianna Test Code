@@ -94,3 +94,33 @@ http://www.nltk.org/api/nltk.tokenize.html
 ... 
 >>> finddemons()
 
+
+
+
+
+
+
+import nltk
+from nltk.corpus import opinion_lexicon
+poswords = set(opinion_lexicon.words("positive-words.txt"))
+negwords = set(opinion_lexicon.words("negative-words.txt"))
+f=open("paulryan.txt", "rU").readlines()
+for line in f:
+    token = nltk.word_tokenize(line)
+    print(token)
+
+lowercase=str(f).lower()
+print(lowercase)
+
+#up until here, it makes everything read by line, and makes everything lowercase, but as a string.
+
+j = [item.lower() for item in f]
+print(j)
+
+#if we use this one, it doesnt read by line anymore.
+
+def finddemons(variable):
+    percpos = len([w for w in f if w in poswords ]) / len(f)
+    percneg = len([w for w in f if w in negwords ]) / len(f)
+    print("pos:", round(percpos, 3), "neg:", round(percneg, 3))
+
