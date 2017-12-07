@@ -380,4 +380,25 @@ for line in f11:
 #PRINT ALL TOTALS:    
     
 print("Paul Ryan's total: ", paulryancounter)
+print("Pence Total: ", pencecounter)
+print("Trump's Total: ", trumpcounter)
+print("Sarah Palin's Total: ", palincounter)
+print("Ben Carson's Total: ", carsoncounter)
+print("Ivanka's Total: ", ivankacounter)
+print("John McCain's Total: ", mccaincounter)
+print("Kellyanne Conway's Total: ", conwaycounter)
+print("Marco Rubio's Total: ", rubiocounter)
+print("Rick Perry's Total: ", perrycounter)
+print("Ted Cruz's Total: ", cruzcounter)
+
+
+
+
+
+
+
+
+
+
+
 
