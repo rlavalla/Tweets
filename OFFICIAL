@@ -378,7 +378,11 @@ for line in f11:
     
     
 #PRINT ALL TOTALS:    
-    
+
+
+#For this we need something that will print it all as one thingie, 
+#because right now it prints each one of those with the result right below each one and looks funny.
+   
 print("Paul Ryan's total: ", paulryancounter)
 print("Pence Total: ", pencecounter)
 print("Trump's Total: ", trumpcounter)
