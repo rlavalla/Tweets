@@ -1,3 +1,13 @@
+#########SOMETHING TO NOTE:
+#all of these twitter files are tweets that have affective demonstratives in them. We have NO control or sample to compare it to
+#I HAVE a general population control (kind of) but it includes ALL tweets, not just ones with affective demonstratives. SO.
+#when we write the paper we need to make sure we specify that our text is tweets with affective demonstratives, that have been picked out by hand.
+
+
+
+
+
+
 import nltk
 from nltk.corpus import opinion_lexicon
 poswords = set(opinion_lexicon.words("positive-words.txt"))
@@ -80,57 +90,30 @@ def finddemons3(variable):
         print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
         return percpos + percneg
     
-pencecounter = 0   
+trumpcounter = 0   
 for line in f3:
     line = line.lower()
     print(line)
     token = nltk.word_tokenize(line)
-    print(pencecounter)
-    addme = finddemons2(token)
-    pencecounter += addme
-    print(pencecounter)
+    print(trumpcounter)
+    addme = finddemons3(token)
+    trumpcounter += addme
+    print(trumpcounter)
     print(token)
     
     
     
     
     
-    
-    
-#TrumpPOTUS:
-
-f2=open("pence.txt", "rU").readlines()
-
-def finddemons2(variable):
-    if len(variable) == 0:
-        return 0
-    else:    
-        percpos = len([w for w in variable if w in poswords ]) / len(variable)
-        percneg = -(len([w for w in variable if w in negwords ]) / len(variable))
-        print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
-        return percpos + percneg
-    
-pencecounter = 0   
-for line in f2:
-    line = line.lower()
-    print(line)
-    token = nltk.word_tokenize(line)
-    print(pencecounter)
-    addme = finddemons2(token)
-    pencecounter += addme
-    print(pencecounter)
-    print(token)    
-    
-    
-    
+ 
     
     
     
 #SarahPalin:
 
-f2=open("pence.txt", "rU").readlines()
+f4=open("palin.txt", "rU").readlines()
 
-def finddemons2(variable):
+def finddemons4(variable):
     if len(variable) == 0:
         return 0
     else:    
@@ -139,15 +122,15 @@ def finddemons2(variable):
         print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
         return percpos + percneg
     
-pencecounter = 0   
-for line in f2:
+palincounter = 0   
+for line in f4:
     line = line.lower()
     print(line)
     token = nltk.word_tokenize(line)
-    print(pencecounter)
-    addme = finddemons2(token)
-    pencecounter += addme
-    print(pencecounter)
+    print(palincounter)
+    addme = finddemons4(token)
+    palincounter += addme
+    print(palincounter)
     print(token)
     
     
@@ -161,9 +144,9 @@ for line in f2:
     
 #BenCarson:
 
-f2=open("pence.txt", "rU").readlines()
+f5=open("carson.txt", "rU").readlines()
 
-def finddemons2(variable):
+def finddemons5(variable):
     if len(variable) == 0:
         return 0
     else:    
@@ -172,15 +155,15 @@ def finddemons2(variable):
         print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
         return percpos + percneg
     
-pencecounter = 0   
-for line in f2:
+carsoncounter = 0   
+for line in f5:
     line = line.lower()
     print(line)
     token = nltk.word_tokenize(line)
-    print(pencecounter)
-    addme = finddemons2(token)
-    pencecounter += addme
-    print(pencecounter)
+    print(carsoncounter)
+    addme = finddemons5(token)
+    carsoncounter += addme
+    print(carsoncounter)
     print(token)
     
     
@@ -190,9 +173,9 @@ for line in f2:
     
 #Ivanka:
 
-f2=open("pence.txt", "rU").readlines()
+f6=open("ivanka.txt", "rU").readlines()
 
-def finddemons2(variable):
+def finddemons6(variable):
     if len(variable) == 0:
         return 0
     else:    
@@ -201,15 +184,15 @@ def finddemons2(variable):
         print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
         return percpos + percneg
     
-pencecounter = 0   
-for line in f2:
+ivankacounter = 0   
+for line in f6:
     line = line.lower()
     print(line)
     token = nltk.word_tokenize(line)
-    print(pencecounter)
-    addme = finddemons2(token)
-    pencecounter += addme
-    print(pencecounter)
+    print(ivankacounter)
+    addme = finddemons6(token)
+    ivankacounter += addme
+    print(ivankacounter)
     print(token)
     
     
@@ -221,9 +204,9 @@ for line in f2:
     
 #JohnMcCain:
 
-f2=open("pence.txt", "rU").readlines()
+f7=open("mccain.txt", "rU").readlines()
 
-def finddemons2(variable):
+def finddemons7(variable):
     if len(variable) == 0:
         return 0
     else:    
@@ -232,15 +215,15 @@ def finddemons2(variable):
         print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
         return percpos + percneg
     
-pencecounter = 0   
-for line in f2:
+mccaincounter = 0   
+for line in f7:
     line = line.lower()
     print(line)
     token = nltk.word_tokenize(line)
-    print(pencecounter)
-    addme = finddemons2(token)
-    pencecounter += addme
-    print(pencecounter)
+    print(mccaincounter)
+    addme = finddemons7(token)
+    mccaincounter += addme
+    print(mccaincounter)
     print(token)
     
     
@@ -255,9 +238,9 @@ for line in f2:
     
 #KellyanneConway:
 
-f2=open("pence.txt", "rU").readlines()
+f8=open("conway.txt", "rU").readlines()
 
-def finddemons2(variable):
+def finddemons8(variable):
     if len(variable) == 0:
         return 0
     else:    
@@ -266,15 +249,15 @@ def finddemons2(variable):
         print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
         return percpos + percneg
     
-pencecounter = 0   
-for line in f2:
+conwaycounter = 0   
+for line in f8:
     line = line.lower()
     print(line)
     token = nltk.word_tokenize(line)
-    print(pencecounter)
-    addme = finddemons2(token)
-    pencecounter += addme
-    print(pencecounter)
+    print(conwaycounter)
+    addme = finddemons8(token)
+    conwaycounter += addme
+    print(conwaycounter)
     print(token)
     
     
@@ -289,9 +272,9 @@ for line in f2:
     
 #MarcoRubio:
 
-f2=open("pence.txt", "rU").readlines()
+f9=open("rubio.txt", "rU").readlines()
 
-def finddemons2(variable):
+def finddemons9(variable):
     if len(variable) == 0:
         return 0
     else:    
@@ -300,15 +283,15 @@ def finddemons2(variable):
         print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
         return percpos + percneg
     
-pencecounter = 0   
-for line in f2:
+rubiocounter = 0   
+for line in f9:
     line = line.lower()
     print(line)
     token = nltk.word_tokenize(line)
-    print(pencecounter)
-    addme = finddemons2(token)
-    pencecounter += addme
-    print(pencecounter)
+    print(rubiocounter)
+    addme = finddemons9(token)
+    rubiocounter += addme
+    print(rubiocounter)
     print(token)
     
     
@@ -326,9 +309,9 @@ for line in f2:
     
 #RickPerry:
 
-f2=open("pence.txt", "rU").readlines()
+f10=open("rickperry.txt", "rU").readlines()
 
-def finddemons2(variable):
+def finddemons10(variable):
     if len(variable) == 0:
         return 0
     else:    
@@ -337,15 +320,15 @@ def finddemons2(variable):
         print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
         return percpos + percneg
     
-pencecounter = 0   
-for line in f2:
+perrycounter = 0   
+for line in f10:
     line = line.lower()
     print(line)
     token = nltk.word_tokenize(line)
-    print(pencecounter)
-    addme = finddemons2(token)
-    pencecounter += addme
-    print(pencecounter)
+    print(perrycounter)
+    addme = finddemons10(token)
+    perrycounter += addme
+    print(perrycounter)
     print(token)
     
     
@@ -359,9 +342,9 @@ for line in f2:
     
 #TedCruz:
 
-f2=open("pence.txt", "rU").readlines()
+f11=open("tedcruz.txt", "rU").readlines()
 
-def finddemons2(variable):
+def finddemons11(variable):
     if len(variable) == 0:
         return 0
     else:    
@@ -370,15 +353,15 @@ def finddemons2(variable):
         print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
         return percpos + percneg
     
-pencecounter = 0   
-for line in f2:
+cruzcounter = 0   
+for line in f11:
     line = line.lower()
     print(line)
     token = nltk.word_tokenize(line)
-    print(pencecounter)
-    addme = finddemons2(token)
-    pencecounter += addme
-    print(pencecounter)
+    print(cruzcounter)
+    addme = finddemons11(token)
+    cruzcounter += addme
+    print(cruzcounter)
     print(token)
     
     
@@ -397,3 +380,4 @@ for line in f2:
 #PRINT ALL TOTALS:    
     
 print("Paul Ryan's total: ", paulryancounter)
+
