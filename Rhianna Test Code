@@ -106,8 +106,25 @@ poswords = set(opinion_lexicon.words("positive-words.txt"))
 negwords = set(opinion_lexicon.words("negative-words.txt"))
 f=open("paulryan.txt", "rU").readlines()
 for line in f:
+    line = line.lower()
+    print(line)
     token = nltk.word_tokenize(line)
+    finddemons(token)
     print(token)
+
+
+def finddemons(variable):
+    if len(variable) == 0:
+        pass
+    else:    
+        percpos = len([w for w in variable if w in poswords ]) / len(variable)
+        percneg = len([w for w in variable if w in negwords ]) / len(variable)
+        print("pos:", round(percpos, 3), "neg:", round(percneg, 3))
+    
+
+
+
+
 
 lowercase=str(f).lower()
 print(lowercase)
@@ -118,9 +135,3 @@ j = [item.lower() for item in f]
 print(j)
 
 #if we use this one, it doesnt read by line anymore.
-
-def finddemons(variable):
-    percpos = len([w for w in f if w in poswords ]) / len(f)
-    percneg = len([w for w in f if w in negwords ]) / len(f)
-    print("pos:", round(percpos, 3), "neg:", round(percneg, 3))
-
