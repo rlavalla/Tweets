@@ -2,8 +2,11 @@ import nltk
 from nltk.corpus import opinion_lexicon
 poswords = set(opinion_lexicon.words("positive-words.txt"))
 negwords = set(opinion_lexicon.words("negative-words.txt"))
-f=open("paulryan.txt", "rU").readlines()
 
+
+#PaulRyan:
+
+f=open("paulryan.txt", "rU").readlines()
 
 def finddemons(variable):
     if len(variable) == 0:
@@ -13,8 +16,6 @@ def finddemons(variable):
         percneg = -(len([w for w in variable if w in negwords ]) / len(variable))
         print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
         return percpos + percneg
-    
-        
     
 paulryancounter = 0   
 for line in f:
@@ -28,5 +29,33 @@ for line in f:
     print(token)
     
     
+    
+#Pence:
+    
+f2=open("pence.txt", "rU").readlines()
+
+def finddemons2(variable):
+    if len(variable) == 0:
+        return 0
+    else:    
+        percpos = len([w for w in variable if w in poswords ]) / len(variable)
+        percneg = -(len([w for w in variable if w in negwords ]) / len(variable))
+        print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
+        return percpos + percneg
+    
+pencecounter = 0   
+for line in f2:
+    line = line.lower()
+    print(line)
+    token = nltk.word_tokenize(line)
+    print(pencecounter)
+    addme = finddemons2(token)
+    pencecounter += addme
+    print(pencecounter)
+    print(token)
+    
+    
+    
+#PRINT ALL TOTALS:    
     
 print("Paul Ryan's total: ", paulryancounter)
