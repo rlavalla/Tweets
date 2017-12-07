@@ -1,0 +1,293 @@
+#FinalProject CompLing
+#call by
+#python    Documents/tweets.py 
+# when saved to Documents
+import nltk  
+from nltk.corpus import opinion_lexicon
+########from nltk.tokenize import word_tokenize
+########from nltk.tokenize.simple import (SpaceTokenizer, TabTokenizer, LineTokenizer, line_tokenize)
+########nltk.word_tokenize()
+
+
+opinion_lexicon.fileids()
+poswords = set(opinion_lexicon.words("positive-words.txt")) 
+negwords = set(opinion_lexicon.words("negative-words.txt")) 
+
+
+f=open("paulryan.txt", "rU")
+raw = f.read()
+len(raw) #length of characters (total)
+token= nltk.word_tokenize(raw)
+len(token) #length of everything, including puct.
+text= nltk.Text(token)
+####ok that totally works but it gives back this...so they're not by line, and they're not all lowercase.
+>>> print(text)
+<Text: 1 . Mar 6 , 2017 07:22:02 PM...>
+>>> text[:50]
+['1', '.', 'Mar', '6', ',', '2017', '07:22:02', 'PM', 'Republicans', 'made', 'a', 
+'promise', 'to', 'the', 'American', 'people—today', ',', 'we', "'re", 'turning', 
+'those', 'words', 'into', 'action', '.', 'https', ':', '//t.co/NyLgt9hhtB', '#', 
+'RepealAndReplace', '[', 'Twitter', 'Web', 'Client', ']', "link'\\n'", '2', '.', 
+'Nov', '13', ',', '2016', '08:53:38', 'AM', 'Think', 'about', 'those', 'regulations', 
+'from', 'the']...
+
+
+https://docs.python.org/3/library/tokenize.html
+^^^^^^^^That has some awesome info about the tokenizing by line with this kind of file.
+
+http://www.nltk.org/api/nltk.tokenize.html
+^^^^^^^^^Good info on tweet tokenizing
+
+
+
+text1 = open("paulryan.txt", "r", encoding = "utf-8") ### on mac just "paulryan.txt"
+text2 = open("pence.txt", "r", encoding = "utf-8") ##### "pence.txt"
+
+###IDK if we need these ones, it's already reading it with the "rU", and we need a different way to do lowercase.
+text1r = text1.readl()
+text2r = text2.read()
+lowertext1 = [w for w in text1r if w.lower]
+textoftext1= nltk.Text(lowertext1)
+text1r.lower()
+lowertext2 = [w for w in text2r if w.lower]
+textoftext2=
+
+print(text1)
+
+def finddemons():
+    for x in lowertext1:
+        y = lowertext1.words() .  #works on text type object (.words) OR tokenize each line in text
+        percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
+        percneg = len([w for w in lowertext1 if w in negwords ]) / len(y)
+        print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+
+def finddemons2():  
+    for x in lowertext2:
+        y = lowertext2.words(x)
+        percpos = len([w for w in lowertext2 if w in poswords ]) / len(y)
+        percneg = len([w for w in lowertext2 if w in negwords ]) / len(y)
+        print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+
+finddemons()
+finddemons2()
+
+
+
+
+
+from nltk.corpus import opinion_lexicon
+
+opinion_lexicon.fileids()
+
+opinion_lexicon.words("negative-words.txt")
+opinion_lexicon.words("positive-words.txt")
+
+poswords = set(opinion_lexicon.words("positive-words.txt"))
+negwords = set(opinion_lexicon.words("negative-words.txt"))
+for x in inaugural.fileids():
+    y = inaugural.words(x)
+    percpos = len([w for w in y if w in poswords ]) /len(y)
+    percneg = len([w for w in y if w in negwords ]) /len(y)
+    print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+
+
+
+
+
+
+
+#########test for '\n' file
+text1 = open("/Users/kna0078/paulryan.txt", "r") ### on mac just "paulryan.txt"
+for x in text1:
+    y = text1.words(x)
+    percpos = len([w for w in text1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
+    percneg = len([w for w in text1 if w in negwords ]) / len(y)
+    print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+    
+    
+    
+for x in text1:
+    y = text1.words(x)
+    percpos = len([w for w in text1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
+    percneg = len([w for w in text1 if w in negwords ]) / len(y)   
+    print(percpos)
+    print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+    
+    
+    
+    
+
+for x in text:
+    y = text(x)
+    percpos = len([w for w in text if w in poswords ]) / len(y)  
+    percneg = len([w for w in text if w in negwords ]) / len(y)
+    print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+    
+    
+for x in lowertext1:
+    y = lowertext1.words() .  #works on text type object (.words) OR tokenize each line in text
+    percpos = len([w for w in lowertext1 if w in poswords ]) / len(y)  ##if w in poswords and is lower?
+    percneg = len([w for w in lowertext1 if w in negwords ]) / len(y)
+    print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+    
+    
+    
+
+f=open("my-file.txt", "rU")
+raw = f.read()
+token= nltk.word_tokenize(raw)
+text= nltk.Text(token)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FinalProject CompLing
+#call by
+#python    Documents/tweets.py 
+# when saved to Documents
+import nltk  
+from nltk.corpus import opinion_lexicon
+
+poswords = set(opinion_lexicon.words("positive-words.txt")) 
+negwords = set(opinion_lexicon.words("negative-words.txt")) 
+
+
+f=open("paulryan.txt", "rU")
+raw = f.read()
+token= nltk.word_tokenize(raw)
+
+f2 = open("pence.txt", "rU")
+raw2 = f2.read()
+token2 = nltk.word_tokenize(raw2)
+
+#FIGURE OUT .LOWER
+
+print(token)
+
+
+
+
+
+
+#TRIED IN CLASS::::
+>>> def finddemons():
+...     emptylist = []
+...     for red in raw:
+...             if red.endswith("\n"):
+...                     emptylist.append(red)
+...             else:
+...                     pass
+...     return emptylist
+... 
+>>> finddemons()
+
+
+
+
+
+def finddemons():
+    for x in token:
+        y = len(token)
+        percpos = len([w for w in token if w in poswords ]) / y  ##if w in poswords and is lower?
+        percneg = len([w for w in token if w in negwords ]) / y
+        print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+        
+finddemons()
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in finddemons
+AttributeError: 'list' object has no attribute 'words'
+
+
+
+def finddemons2():  
+    for x in token2:
+        y = token2.words(x)
+        percpos = len([w for w in token2 if w in poswords ]) / len(y)
+        percneg = len([w for w in token2 if w in negwords ]) / len(y)
+        print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+
+finddemons()
+finddemons2()
+
+
+
+https://docs.python.org/3/library/tokenize.html
+^^^^^^^^That has some awesome info about the tokenizing by line with this kind of file.
+
+http://www.nltk.org/api/nltk.tokenize.html
+^^^^^^^^^Good info on tweet tokenizing
+
+
+
+#####THAT WORKSSSSSSS
+>>> import nltk
+>>> from nltk.corpus import opinion_lexicon
+>>> poswords = set(opinion_lexicon.words("positive-words.txt")) 
+>>> negwords = set(opinion_lexicon.words("negative-words.txt")) 
+>>> f=open("paulryan.txt", "rU")
+>>> raw = f.read()
+>>> token= nltk.word_tokenize(raw)
+>>> def finddemons():
+...     for x in token:
+...             percpos = len([w for w in token if w in poswords ]) / len(raw)
+...             percneg = len([w for w in token if w in negwords ]) / len(raw)
+...             print(x, "pos:", round(percpos, 3), "neg:", round(percneg, 3))
+... 
+>>> finddemons()
+
+
+
+
+
+
+
+import nltk
+from nltk.corpus import opinion_lexicon
+poswords = set(opinion_lexicon.words("positive-words.txt"))
+negwords = set(opinion_lexicon.words("negative-words.txt"))
+f=open("paulryan.txt", "rU").readlines()
+
+
+def finddemons(variable):
+    if len(variable) == 0:
+        return 0
+    else:    
+        percpos = len([w for w in variable if w in poswords ]) / len(variable)
+        percneg = -(len([w for w in variable if w in negwords ]) / len(variable))
+        print("pos:", round(percpos, 3), "neg:", round(percneg, 3), "total:", round(percpos + percneg, 3))
+        return percpos + percneg
+    
+        
+    
+paulryancounter = 0   
+for line in f:
+    line = line.lower()
+    print(line)
+    token = nltk.word_tokenize(line)
+    print(paulryancounter)
+    addme = finddemons(token)
+    paulryancounter += addme
+    print(paulryancounter)
+    print(token)
+    
+    
+    
+print("Paul Ryan's total: ", paulryancounter)
