@@ -371,22 +371,20 @@ for line in f11:
 #Do we want to take out the print(line) and the print(------counter) before the finddemons in all of the ? 
 #These are checks for ourselves right?
 
-#By the way, I think all of the finddemons can be the original. There's no need for the numbers. 
 #Let me know if you agree. We can move all the open statements to the beginning as well if we want
 #it to look more official. 
-#Also, I added the function calls. #Without the numbers. 
     
 finddemons(f)
-finddemons(f2)
-finddemons(f3)
-finddemons(f4)
-finddemons(f5)
-finddemons(f6)
-finddemons(f7)
-finddemons(f8)
-finddemons(f9)
-finddemons(f10)
-finddemons(f11)
+finddemons2(f2)
+finddemons3(f3)
+finddemons4(f4)
+finddemons5(f5)
+finddemons6(f6)
+finddemons7(f7)
+finddemons8(f8)
+finddemons9(f9)
+finddemons10(f10)
+finddemons11(f11)
     
     
     
