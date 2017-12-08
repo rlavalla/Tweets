@@ -365,13 +365,28 @@ for line in f11:
     print(cruzcounter)
     print(token)
     
+
     
     
+#Do we want to take out the print(line) and the print(------counter) before the finddemons in all of the ? 
+#These are checks for ourselves right?
+
+#By the way, I think all of the finddemons can be the original. There's no need for the numbers. 
+#Let me know if you agree. We can move all the open statements to the beginning as well if we want
+#it to look more official. 
+#Also, I added the function calls. #Without the numbers. 
     
-    
-    
-    
-    
+finddemons(f)
+finddemons(f2)
+finddemons(f3)
+finddemons(f4)
+finddemons(f5)
+finddemons(f6)
+finddemons(f7)
+finddemons(f8)
+finddemons(f9)
+finddemons(f10)
+finddemons(f11)
     
     
     
@@ -383,17 +398,28 @@ for line in f11:
 
 #For this we need something that will print it all as one thingie, 
 #because right now it prints each one of those with the result right below each one and looks funny.
-   
+#There shouldn't be any reason that they print right below each other
+
 print("Paul Ryan's total: ", paulryancounter)
-print("Pence Total: ", pencecounter)
+print()
+print("Pence's Total: ", pencecounter)
+print()
 print("Trump's Total: ", trumpcounter)
+print()
 print("Sarah Palin's Total: ", palincounter)
+print()
 print("Ben Carson's Total: ", carsoncounter)
+print()
 print("Ivanka's Total: ", ivankacounter)
+print()
 print("John McCain's Total: ", mccaincounter)
+print()
 print("Kellyanne Conway's Total: ", conwaycounter)
+print()
 print("Marco Rubio's Total: ", rubiocounter)
+print()
 print("Rick Perry's Total: ", perrycounter)
+print()
 print("Ted Cruz's Total: ", cruzcounter)
 
 
