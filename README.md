@@ -12,14 +12,17 @@ We collected tweets from Ben Carson, ______ Conway, Ivanka Trump, John McCain, S
 
 The program does not currently contain a control group. However, this improvement would be possible in the future. 
 
-Following the data collection, the data is imported with .readlines which separates the data by tweet as a list. ########Does this do that, or does the .word_tokenize do that?
+Following the data collection, the data is imported with .readlines which separates the data by tweet as a list. ######## Does this do that, or does the .word_tokenize do that?
 Then, we arranged an empty counter to capture our data.
 With a for loop, we iterated the .lower() method over every line within our data, making it assessible to the words within the opinion lexicon offered by nltk. 
-#####whatever word_tokenize does
+##### whatever word_tokenize does
+The for loop will then take the results from the designed function (which will be explained later) and add them to the counter. The counter will result in the total positivity or negativity of each political person's tweets. 
+The finddemons(variable) function takes an if-else statement. The if statement erases the possibility of accidentally taking in data that does look at the entire tweet. The else statement divides the number of positive and negative words by the length of the tweet. The resulting positive and negative score are added together. This attains the tweets sentimentality score.This is accomplished for every tweet, and then returned for the for loop. The for loop completes the process by adding all of the tweets' sentimentalities to arrive at the politician's overall sentimentality within his or her tweets. 
 
+This is interesting because . . .
 
-The main problem we encountered was the need to run a string method on a list. 
-The list was needed to separate our data sets by tweet, which we accomplished with .readlines when opening the file.
+One of the main problems we encountered was when we attempt to run a string method on a list. 
+The list was needed to separate our data sets by tweet, which we accomplished with ######### .readlines ######## when opening the file. However, we needed the dada in a string format in order to lowercase the data. Without the lowercase data, not all of the words would be comparable to the opinion lexicon. 
 
 
 
