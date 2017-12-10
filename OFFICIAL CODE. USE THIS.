@@ -419,7 +419,7 @@ print()
 print("Rick Perry's Total: ", perrycounter)
 print()
 print("Ted Cruz's Total: ", cruzcounter)
-
+print()
 
 
 
